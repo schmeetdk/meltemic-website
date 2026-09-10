@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A brand and identity review of Meltemic OU conducted through Allan Peters' logo principles, with a rebuilt mark, wordmark and system.">
+    <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../brand/favicon.ico" sizes="16x16 32x32 48x48">
+<title>The Meltemic Mark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Orbitron:wght@700&display=swap"
+    rel="stylesheet">
+
+<style>
+    /* ---- tokens: complete light palette on bare :root ---- */
+    :root {
+        --paper: #EAECEF;
+        --panel: #FFFFFF;
+        --panel-2: #F3F5F7;
+        --ink: #12171C;
+        --muted: #5C6771;
+        --faint: #8B959E;
+        --rule: #D0D5DB;
+        --rule-soft: #DEE2E7;
+        --annot: #C41E5C;
+        --annot-soft: rgba(196, 30, 92, 0.10);
+        --good: #1F7A5A;
+
+        --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+        --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+        --measure: 68ch;
+        color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --paper: #0F1216;
+            --panel: #161A20;
+            --panel-2: #1B2027;
+            --ink: #E7EAEE;
+            --muted: #96A0AA;
+            --faint: #6B757F;
+            --rule: #262C33;
+            --rule-soft: #1F242B;
+            --annot: #F2568E;
+            --annot-soft: rgba(242, 86, 142, 0.13);
+            --good: #4FBF95;
+            color-scheme: dark;
+        }
+    }
+
+    :root[data-theme="dark"] {
+        --paper: #0F1216;
+        --panel: #161A20;
+        --panel-2: #1B2027;
+        --ink: #E7EAEE;
+        --muted: #96A0AA;
+        --faint: #6B757F;
+        --rule: #262C33;
+        --rule-soft: #1F242B;
+        --annot: #F2568E;
+        --annot-soft: rgba(242, 86, 142, 0.13);
+        --good: #4FBF95;
+        color-scheme: dark;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* generated paths carry no fill attribute — inherit from the container */
+    .sheet svg {
+        fill: currentColor;
+    }
+
+    body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .sheet {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 28px 96px;
+    }
+
+    .prose {
+        max-width: var(--measure);
+    }
+
+    p {
+        margin: 0 0 1.1em;
+        color: var(--muted);
+    }
+
+    .prose p strong,
+    li strong {
+        color: var(--ink);
+        font-weight: 600;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    a {
+        color: var(--ink);
+        text-decoration-color: var(--annot);
+        text-underline-offset: 3px;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+        outline: 2px solid var(--annot);
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+
+    /* ---- title block: a drawing's title block ---- */
+    .titleblock {
+        border-bottom: 2px solid var(--ink);
+        padding: 56px 0 20px;
+        margin-bottom: 8px;
+    }
+
+    .kicker {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--annot);
+        margin-bottom: 22px;
+    }
+
+    h1 {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(2.4rem, 6vw, 3.9rem);
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.5em;
+        max-width: 17ch;
+        text-wrap: balance;
+    }
+
+    .standfirst {
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        line-height: 1.45;
+        color: var(--muted);
+        max-width: 46ch;
+        margin: 0 0 32px;
+    }
+
+    .meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 18px 28px;
+        font-family: var(--mono);
+        font-size: 11.5px;
+        line-height: 1.5;
+        border-top: 1px solid var(--rule);
+        padding-top: 18px;
+    }
+
+    .meta dt {
+        color: var(--faint);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 10px;
+        margin-bottom: 3px;
+    }
+
+    .meta dd {
+        margin: 0;
+        color: var(--ink);
+    }
+
+    /* ---- sections ---- */
+    section {
+        padding-top: 68px;
+    }
+
+    .secmark {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--faint);
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+
+    .secmark b {
+        color: var(--annot);
+        font-weight: 500;
+    }
+
+    h2 {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(1.7rem, 3.4vw, 2.35rem);
+        line-height: 1.12;
+        letter-spacing: -0.015em;
+        margin: 0 0 0.7em;
+        max-width: 22ch;
+        text-wrap: balance;
+    }
+
+    h3 {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: -0.005em;
+        margin: 0 0 0.4em;
+    }
+
+    /* ---- plates: bordered specimen panels ---- */
+    .plate {
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        margin: 34px 0;
+    }
+
+    .plate-body {
+        padding: 40px 32px;
+    }
+
+    .plate-cap {
+        border-top: 1px solid var(--rule);
+        padding: 11px 16px;
+        font-family: var(--mono);
+        font-size: 11px;
+        line-height: 1.5;
+        color: var(--muted);
+    }
+
+    .plate-cap b {
+        color: var(--annot);
+        font-weight: 500;
+        margin-right: 10px;
+    }
+
+    .specimens {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+        gap: 30px 22px;
+        align-items: end;
+    }
+
+    .spec {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .spec-art {
+        height: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .spec-art svg {
+        max-height: 84px;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        display: block;
+        fill: var(--ink);
+    }
+
+    .spec-lab {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        line-height: 1.45;
+        color: var(--muted);
+    }
+
+    .spec-lab i {
+        display: block;
+        font-style: normal;
+        color: var(--faint);
+    }
+
+    .spec.out .spec-art svg {
+        fill: var(--faint);
+        opacity: .55;
+    }
+
+    .spec.pick .spec-lab {
+        color: var(--annot);
+    }
+
+    /* ---- the old logo, rendered as it actually shipped ---- */
+    .oldlogo {
+        font-family: 'Orbitron', 'Trebuchet MS', sans-serif;
+        font-weight: 700;
+        font-size: 34px;
+        letter-spacing: -0.02em;
+        color: #2563eb;
+    }
+
+    .beforeafter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+    }
+
+    .beforeafter>div {
+        background: var(--panel);
+        padding: 34px 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        align-items: flex-start;
+        justify-content: space-between;
+        min-height: 150px;
+    }
+
+    .ba-tag {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--faint);
+    }
+
+    /* ---- findings ---- */
+    ol.findings {
+        list-style: none;
+        margin: 30px 0 0;
+        padding: 0;
+        border-top: 1px solid var(--rule);
+    }
+
+    ol.findings li {
+        display: grid;
+        grid-template-columns: 46px 1fr;
+        gap: 20px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .fnum {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--annot);
+        padding-top: 3px;
+    }
+
+    .fbody p {
+        margin: 0.35em 0 0;
+        font-size: 15px;
+    }
+
+    .principle {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+        display: block;
+    }
+
+    /* ---- spec table ---- */
+    .tablewrap {
+        overflow-x: auto;
+        margin: 26px 0;
+        border: 1px solid var(--rule);
+        background: var(--panel);
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+        min-width: 460px;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 11px 16px;
+        border-bottom: 1px solid var(--rule-soft);
+    }
+
+    thead th {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--faint);
+        font-weight: 400;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    tbody tr:last-child td {
+        border-bottom: 0;
+    }
+
+    td.num,
+    td.spec-val {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        font-variant-numeric: tabular-nums;
+        color: var(--ink);
+        white-space: nowrap;
+    }
+
+    td.what {
+        color: var(--muted);
+    }
+
+    /* ---- swatches ---- */
+    .swatches {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+    }
+
+    .sw {
+        background: var(--panel);
+        padding: 0;
+    }
+
+    .sw-chip {
+        height: 92px;
+    }
+
+    .sw-meta {
+        padding: 12px 14px 14px;
+        font-family: var(--mono);
+        font-size: 11px;
+        line-height: 1.55;
+    }
+
+    .sw-meta b {
+        display: block;
+        font-family: var(--sans);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 2px;
+    }
+
+    .sw-meta span {
+        color: var(--faint);
+        display: block;
+    }
+
+    .sw-meta em {
+        font-style: normal;
+        color: var(--good);
+    }
+
+    /* ---- scale test strip ---- */
+    .scaletest {
+        display: flex;
+        align-items: flex-end;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .scaletest>div {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .scaletest svg {
+        width: auto;
+        display: block;
+        fill: var(--ink);
+    }
+
+    .typerow {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 18px;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--rule-soft);
+        align-items: baseline;
+    }
+
+    .typerow:last-child {
+        border-bottom: 0;
+    }
+
+    .typerow .role {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--faint);
+        line-height: 1.5;
+    }
+
+    .t-archivo {
+        font-family: 'Archivo', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
+    }
+
+    .t-inter {
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        color: var(--muted);
+    }
+
+    .t-plex {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+    }
+
+    .note {
+        border-left: 2px solid var(--annot);
+        background: var(--annot-soft);
+        padding: 16px 20px;
+        margin: 28px 0;
+        font-size: 15px;
+    }
+
+    .note p:last-child {
+        margin-bottom: 0;
+    }
+
+    .note b {
+        color: var(--ink);
+    }
+
+    ul.plain {
+        margin: 0 0 1.1em;
+        padding-left: 1.1em;
+        color: var(--muted);
+    }
+
+    ul.plain li {
+        margin-bottom: 0.5em;
+    }
+
+    .sources {
+        font-size: 13.5px;
+    }
+
+    .sources li {
+        margin-bottom: 0.45em;
+    }
+
+    footer {
+        margin-top: 76px;
+        border-top: 2px solid var(--ink);
+        padding-top: 18px;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--faint);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 620px) {
+        .beforeafter {
+            grid-template-columns: 1fr;
+        }
+
+        .typerow {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .plate-body {
+            padding: 28px 20px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div class="sheet">
+
+    <header class="titleblock">
+        <div class="kicker">Brand &amp; identity review</div>
+        <h1>The mark Meltemic didn't have</h1>
+        <p class="standfirst">A logo, wordmark and identity system for Meltemic OÜ, reviewed and
+            rebuilt through the lens of Allan Peters.</p>
+        <dl class="meta">
+            <div>
+                <dt>Subject</dt>
+                <dd>meltemic.com</dd>
+            </div>
+            <div>
+                <dt>Lens</dt>
+                <dd>Allan Peters, <i>Logos That Last</i></dd>
+            </div>
+            <div>
+                <dt>Verdict</dt>
+                <dd>Rebuild, not refresh</dd>
+            </div>
+            <div>
+                <dt>Status</dt>
+                <dd>Applied to the live site</dd>
+            </div>
+        </dl>
+    </header>
+
+    <section>
+        <div class="secmark"><b>01</b> The lens</div>
+        <div class="prose">
+            <h2>What Peters actually asks of a logo</h2>
+            <p>Allan Peters is Partner and Chief Creative Officer at Peters Design Company, and has
+                worked on identity for Nike, Amazon, Target and Patagonia. His book <em>Logos That
+                    Last</em> is the clearest statement of his method, and it is unusually
+                specific — which makes it a usable review instrument rather than a set of adjectives.</p>
+            <p>Three of his ideas do most of the work here.</p>
+            <p><strong>Permanence-first.</strong> Longevity is not a byproduct of good design, it is
+                a design objective in itself. A logo that feels current this year will feel dated in
+                five; one built on the brand's actual truth has indefinite forward momentum.</p>
+            <p><strong>Three levels, simultaneously.</strong> <em>Conceptual clarity</em> — built on
+                what the brand operationally <em>is</em>, not what it aspires to. <em>Formal
+                    integrity</em> — curve geometry, stroke weight and optical spacing, judged by
+                whether the mark still reads at 16&nbsp;px. <em>System expandability</em> — a logo is
+                a seed, and the question is what it grows into.</p>
+            <p><strong>The practical tests.</strong> You need the icon alone at 72&nbsp;×&nbsp;72 for
+                avatars and app tiles — typography-only logos become unreadable when miniaturized.
+                Pressure-test early: wrong color, wrong size, hostile surroundings. And the one
+                everybody quotes: <em>would you be proud to wear it on a hat?</em></p>
+            <p>Measured against that, the old Meltemic logo has one real problem and seven
+                consequences of it.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="secmark"><b>02</b> The audit</div>
+        <div class="prose">
+            <h2>What was there</h2>
+            <p>The mark was the word <code>meltemic</code> preceded by an unclosed angle bracket, set
+                in Tailwind's default blue. There was no symbol, no favicon, no avatar, and no
+                system.</p>
+        </div>
+
+        <div class="plate">
+            <div class="beforeafter">
+                <div>
+                    <span class="ba-tag">Before — as shipped</span>
+                    <div class="oldlogo">&lt;meltemic</div>
+                    <span class="ba-tag" style="color:var(--annot)">no mark · no favicon · no system</span>
+                </div>
+                <div>
+                    <span class="ba-tag">After</span>
+                    <div style="width:100%"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5549.83 836.22" aria-hidden="true" style="height:38px;width:auto;"><path d="M177.15 747.22L0 747.22L367.04 0L448.1 0L591.44 435.9L841.82 0L924.17 0L1107.71 747.22L943.98 747.22L839.74 322.84L551.75 824.22L386.37 321.28ZM1437.4 824.22L1437.4 297.79L1552.66 297.79L1563.31 369.74L1570.31 369.74Q1587.75 344.44 1634.36 306.57Q1634.36 306.57 1693.53 285.79Q1693.53 285.79 1727.75 285.79Q1777.01 285.79 1850.75 325.74Q1850.75 325.74 1870.53 369.74L1877.53 369.74Q1894.97 344.44 1942.92 306.57Q1942.92 306.57 2004.23 285.79Q2004.23 285.79 2039.01 285.79Q2089.05 285.79 2162.79 322.61Q2162.79 322.61 2204.14 402.79Q2204.14 402.79 2204.14 467.35L2204.14 824.22L2065.4 824.22L2065.4 492.13Q2065.4 467.31 2054.27 432.48Q2054.27 432.48 2034.36 411.7Q2034.36 411.7 2004.88 401.48Q2004.88 401.48 1987.53 401.48Q1959.62 401.48 1915.79 431.52Q1915.79 431.52 1890.53 483.39Q1890.53 483.39 1890.53 517.35L1890.53 824.22L1751.79 824.22L1751.79 492.13Q1751.79 467.31 1740.66 432.48Q1740.66 432.48 1720.75 411.7Q1720.75 411.7 1691.27 401.48Q1691.27 401.48 1673.92 401.48Q1646.01 401.48 1601.62 431.52Q1601.62 431.52 1576.14 483.39Q1576.14 483.39 1576.14 517.35L1576.14 824.22ZM3975.4 824.22L3975.4 297.79L4090.66 297.79L4101.31 369.74L4108.31 369.74Q4125.75 344.44 4172.36 306.57Q4172.36 306.57 4231.53 285.79Q4231.53 285.79 4265.75 285.79Q4315.01 285.79 4388.75 325.74Q4388.75 325.74 4408.53 369.74L4415.53 369.74Q4432.97 344.44 4456.94 325.5Q4480.92 306.57 4542.23 285.79Q4542.23 285.79 4577.01 285.79Q4627.05 285.79 4700.79 322.61Q4700.79 322.61 4742.14 402.79Q4742.14 402.79 4742.14 467.35L4742.14 824.22L4603.4 824.22L4603.4 492.13Q4603.4 467.31 4597.84 449.89Q4592.27 432.48 4572.36 411.7Q4572.36 411.7 4542.88 401.48Q4542.88 401.48 4525.53 401.48Q4497.62 401.48 4453.79 431.52Q4453.79 431.52 4428.53 483.39Q4428.53 483.39 4428.53 517.35L4428.53 824.22L4289.79 824.22L4289.79 492.13Q4289.79 467.31 4284.23 449.89Q4278.66 432.48 4268.7 422.09Q4258.75 411.7 4229.27 401.48Q4229.27 401.48 4211.92 401.48Q4184.01 401.48 4139.62 431.52Q4139.62 431.52 4114.14 483.39Q4114.14 483.39 4114.14 517.35L4114.14 824.22ZM2541.23 836.22Q2454.83 836.22 2336.96 777.22Q2336.96 777.22 2276.83 655.22Q2276.83 655.22 2276.83 561Q2276.83 466.44 2336.75 345.22Q2336.75 345.22 2453.31 285.79Q2453.31 285.79 2538.62 285.79Q2618.75 285.79 2728.27 343.22Q2728.27 343.22 2784.18 462.09Q2784.18 462.09 2784.18 556.31L2784.18 591.87L2417.92 591.87Q2419.49 638.05 2444.4 701.78Q2444.4 701.78 2497.66 733.48Q2497.66 733.48 2541.14 733.48Q2565.01 733.48 2604.36 721.48Q2604.36 721.48 2632.83 697.35Q2632.83 697.35 2648.31 661.52Q2648.31 661.52 2648.31 638.48L2784.18 638.48Q2784.18 687.83 2748.97 762.26Q2748.97 762.26 2684.01 811.35Q2684.01 811.35 2595.01 836.22Q2595.01 836.22 2541.23 836.22ZM3656.23 836.22Q3569.83 836.22 3451.96 777.22Q3451.96 777.22 3391.83 655.22Q3391.83 655.22 3391.83 561Q3391.83 466.44 3451.75 345.22Q3451.75 345.22 3568.31 285.79Q3568.31 285.79 3653.62 285.79Q3733.75 285.79 3843.27 343.22Q3843.27 343.22 3899.18 462.09Q3899.18 462.09 3899.18 556.31L3899.18 591.87L3532.92 591.87Q3534.49 638.05 3559.4 701.78Q3559.4 701.78 3612.66 733.48Q3612.66 733.48 3656.14 733.48Q3680.01 733.48 3719.36 721.48Q3719.36 721.48 3747.83 697.35Q3747.83 697.35 3763.31 661.52Q3763.31 661.52 3763.31 638.48L3899.18 638.48Q3899.18 687.83 3863.97 762.26Q3863.97 762.26 3799.01 811.35Q3799.01 811.35 3710.01 836.22Q3710.01 836.22 3656.23 836.22ZM5312.14 836.22Q5228.4 836.22 5114.18 776.79Q5114.18 776.79 5085.01 715.68Q5055.83 654.57 5055.83 561Q5055.83 466.44 5114.96 345Q5114.96 345 5229.18 285.57Q5229.18 285.57 5312.14 285.57Q5366.66 285.57 5453.88 311.57Q5453.88 311.57 5517.44 364.79Q5517.44 364.79 5534.08 404.65Q5546.89 435.38 5549.83 474.35L5476.25 498.26L5411.7 498.26Q5411.7 462.57 5389.49 416.31Q5389.49 416.31 5344.7 392.61Q5344.7 392.61 5310.57 392.61Q5270.88 392.61 5220.84 428.22Q5220.84 428.22 5196.92 498Q5196.92 498 5196.92 550.22L5196.92 572.79Q5196.92 624.22 5221.05 694.57Q5221.05 694.57 5273.1 729.39Q5273.1 729.39 5315.36 729.39Q5349.14 729.39 5394.14 705.7Q5394.14 705.7 5418.14 657.65Q5418.14 657.65 5418.14 623.31L5473.57 623.31L5549.69 648.04Q5546.59 684.59 5534.08 714.68Q5517.44 754.65 5454.66 808.65Q5454.66 808.65 5410.66 822.44Q5366.66 836.22 5312.14 836.22ZM3258.88 836.22Q3208.79 836.22 3146.92 800.26Q3146.92 800.26 3118.92 739.05Q3118.92 739.05 3118.92 702.26L3118.92 405.39L3053.53 405.39L3053.53 297.79L3123.01 297.79L3149.57 147.96L3257.66 147.96L3257.66 297.79L3353.23 297.79L3353.23 405.39L3257.66 405.39L3257.66 679.18Q3257.66 703 3279.66 728.61Q3279.66 728.61 3304.27 728.61L3353.23 728.61L3353.23 819.79Q3341.92 824 3309.01 831.44Q3309.01 831.44 3273.75 836.22Q3273.75 836.22 3258.88 836.22ZM2860.4 824.22L2860.4 100.79L2999.14 100.79L2999.14 824.22ZM4840.4 824.22L4840.4 297.79L4979.14 297.79L4979.14 824.22ZM3534.71 504.13L3756.1 504.13Q3756.1 473.74 3741.75 430.57Q3741.75 430.57 3715.62 402.09Q3715.62 402.09 3678.7 389.31Q3678.7 389.31 3655.36 389.31Q3617.66 389.31 3566.62 414.44Q3566.62 414.44 3539.49 465.18Q3539.49 465.18 3534.71 504.13ZM2419.71 504.13L2641.1 504.13Q2641.1 473.74 2626.75 430.57Q2626.75 430.57 2600.62 402.09Q2600.62 402.09 2563.7 389.31Q2563.7 389.31 2540.36 389.31Q2502.66 389.31 2451.62 414.44Q2451.62 414.44 2424.49 465.18Q2424.49 465.18 2419.71 504.13ZM4840.4 220.92L4840.4 100.79L4979.14 100.79L4979.14 220.92Z"/></svg></div>
+                    <span class="ba-tag" style="color:var(--good)">mark · wordmark · icon · rule · palette</span>
+                </div>
+            </div>
+            <div class="plate-cap"><b>Plate 1</b> The old logotype is shown in Orbitron, which is
+                what visitors actually saw — see finding 3.</div>
+        </div>
+
+        <ol class="findings">
+            <li>
+                <div class="fnum">01</div>
+                <div class="fbody">
+                    <h3>There is no mark, so there is nothing to put anywhere</h3>
+                    <p>No favicon, no LinkedIn avatar, no app tile, no Open Graph image. This is the
+                        failure Peters names most bluntly: you need the icon on its own at
+                        72&nbsp;×&nbsp;72, and a wordmark cannot do that job.</p>
+                    <span class="principle">↳ formal integrity · the 72×72 test</span>
+                </div>
+            </li>
+            <li>
+                <div class="fnum">02</div>
+                <div class="fbody">
+                    <h3>The angle bracket is the most-used signifier in the category</h3>
+                    <p>“<code>&lt;</code> means we write code” is the default move for every dev shop
+                        and technical consultancy. It fails <em>unique</em> outright. It is also an
+                        unclosed bracket, which to the audience most likely to notice reads as a
+                        syntax error, and it hangs a fragment off the left edge where the lockup
+                        should have a clean vertical.</p>
+                    <span class="principle">↳ simple · unique · memorable</span>
+                </div>
+            </li>
+            <li>
+                <div class="fnum">03</div>
+                <div class="fbody">
+                    <h3>The logo was rendering in a fallback font</h3>
+                    <p>The stylesheet asked for <code>'Biome'</code> — a licensed Monotype face that
+                        was never loaded — and fell back to Orbitron. Anyone without Biome installed
+                        locally, which is everyone, saw a font nobody chose. The brand's single most
+                        important asset was rendering by accident.</p>
+                    <span class="principle">↳ formal integrity</span>
+                </div>
+            </li>
+            <li>
+                <div class="fnum">04</div>
+                <div class="fbody">
+                    <h3>Orbitron is a dated trend face</h3>
+                    <p>Orbitron reads as 2010s sci-fi UI. Peters' test is whether a mark could have
+                        been drawn fifty years ago and still look current; this one is pinned to a
+                        decade.</p>
+                    <span class="principle">↳ permanence-first</span>
+                </div>
+            </li>
+            <li>
+                <div class="fnum">05</div>
+                <div class="fbody">
+                    <h3>The name is the strongest asset and the mark ignored it</h3>
+                    <p>Meltemic is named for the Meltemi. The logo said nothing about wind, water,
+                        Greece or the sea — it substituted a generic tech signal for a specific,
+                        ownable, personally earned story. This is the finding everything else follows
+                        from.</p>
+                    <span class="principle">↳ conceptual clarity · operational truth</span>
+                </div>
+            </li>
+            <li>
+                <div class="fnum">06</div>
+                <div class="fbody">
+                    <h3>The color was the framework default</h3>
+                    <p><code>#2563EB</code> is Tailwind <code>blue-600</code>, unmodified, on slate
+                        grays. Blue is the most crowded color in B2B software, and this is its most
+                        crowded shade.</p>
+                    <span class="principle">↳ simple · unique · memorable</span>
+                </div>
+            </li>
+            <li>
+                <div class="fnum">07</div>
+                <div class="fbody">
+                    <h3>Emoji were doing the work of iconography</h3>
+                    <p>🚀 📈 🤖 are not brand assets. They render differently on every operating
+                        system, carry someone else's drawing style, and cannot be extended.</p>
+                    <span class="principle">↳ system expandability</span>
+                </div>
+            </li>
+            <li>
+                <div class="fnum">08</div>
+                <div class="fbody">
+                    <h3>Nothing could grow from it</h3>
+                    <p>No pattern, no icon language, no secondary device, no rules. There was a
+                        logotype and then a stock Bootstrap-flavoured page around it.</p>
+                    <span class="principle">↳ system expandability</span>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <div class="secmark"><b>03</b> The concept</div>
+        <div class="prose">
+            <h2>The name was already doing the work</h2>
+            <p>The <strong>Meltemi</strong> is the summer wind of the Aegean. The Greeks called it
+                the <em>Etesian</em> — from <em>etesios</em>, “annual”. It arrives every year, from
+                the same quarter, with roughly the same force, between June and September. It is not
+                a storm. It is weather you plan around.</p>
+            <p>That is an unusually good fit for a firm selling strategic operations. Markets,
+                capital and AI are exactly that kind of weather: strong, constant, and not yours to
+                control. You don't fight the Meltemi — you set a course that uses it.</p>
+            <p>And the founder isn't borrowing the metaphor. He is a Dane who learned the water in
+                Scandinavian seas — a lifetime of sailing and kitesurfing in the cold north — and who
+                now lives in Tel Aviv, on the Mediterranean. He added the <em>c</em> to
+                <em>Meltemi</em> himself, to give the name a technical edge.</p>
+            <p>Peters asks for conceptual clarity built on operational truth rather than aspiration.
+                This name is not a holiday memory. It marks a move — from northern water to a
+                southern summer wind — made by someone who has spent his life reading both. The
+                identity that follows says the same thing twice: Nordic restraint in the typography,
+                Aegean weather in the mark.</p>
+            <p>Which produces the form. A boat cannot sail directly into the wind; it beats upwind
+                in a zigzag, tacking. Draw that course on a chart and you draw <strong>a pointed
+                    M</strong> — the monogram, the wave and the tactic in one shape.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="secmark"><b>04</b> The exploration</div>
+        <div class="prose">
+            <h2>Six directions, one survivor</h2>
+            <p>Peters works from a brand-noun list, narrows it, and draws the survivors as vector
+                sketches before showing anything. The nouns here: wind, sail, tack, kite, wave,
+                isobar, wind barb, compass north, Cycladic white, limestone, salt.</p>
+        </div>
+
+        <div class="plate">
+            <div class="plate-body">
+                <div class="specimens" style="grid-template-columns:repeat(3,1fr)">
+                    <div class="spec">
+                        <div class="spec-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.12 93.07" aria-hidden="true"><path d="M18.12 86.42L0 86.42L31.84 0L41.68 0L65.06 51.77L88.44 0L98.28 0L130.12 86.42L112 86.42L92.26 32.84L65.06 93.07L37.86 32.84Z"/></svg></div>
+                        <div class="spec-lab">A · Gust<i>upright</i></div>
+                    </div>
+                    <div class="spec pick">
+                        <div class="spec-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.22 93.39" aria-hidden="true"><path d="M18.94 86.63L0 86.63L42.55 0L52.25 0L69.31 51.87L99.1 0L108.94 0L130.22 86.63L112.72 86.63L99.61 33.25L65.07 93.39L45.24 33.09Z"/></svg></div>
+                        <div class="spec-lab">B · Gust<i>leaning 7°</i></div>
+                    </div>
+                    <div class="spec pick">
+                        <div class="spec-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true"><path fill-rule="evenodd" d="M28.16 0L99.84 0C115.39 0 128 12.61 128 28.16L128 99.84C128 115.39 115.39 128 99.84 128L28.16 128C12.61 128 0 115.39 0 99.84L0 28.16C0 12.61 12.61 0 28.16 0ZM36.58 88.4L51.81 57.39L63.85 94L84.81 57.5L92.4 88.4L104.32 88.4L90.96 34L84.96 34L66.74 65.73L56.3 34L50.4 34L23.68 88.4Z"/></svg></div>
+                        <div class="spec-lab">C · Sails<i>knockout</i></div>
+                    </div>
+                    <div class="spec out">
+                        <div class="spec-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.91 119.24" aria-hidden="true"><path d="M12 28.78L12 36.05L39.09 21L44.91 31.49L12 49.78L12 57.05L39.09 42L44.91 52.49L12 70.78L12 119.24L0 119.24L0 19.24L4.45 19.24L39.09 0L44.91 10.49Z"/></svg></div>
+                        <div class="spec-lab">D · Wind barb<i>reads as a flag</i></div>
+                    </div>
+                    <div class="spec out">
+                        <div class="spec-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.25 97.15" aria-hidden="true"><path d="M0 49.2L31.63 0L63.25 49.2L54 55.15L31.63 20.34L9.25 55.15ZM0 70.2L31.63 21L63.25 70.2L54 76.15L31.63 41.34L9.25 76.15ZM0 91.2L31.63 42L63.25 91.2L54 97.15L31.63 62.34L9.25 97.15Z"/></svg></div>
+                        <div class="spec-lab">E · Isobars<i>reads as a tree</i></div>
+                    </div>
+                    <div class="spec out">
+                        <div class="spec-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116.35 51.13" aria-hidden="true"><path d="M0 47.07Q7.39 24.66 23.71 12.01Q39.21 0 77.13 0Q77.13 0 92.64 12.01Q108.96 24.66 116.35 47.07L104 51.13Q97.86 32.5 84.68 22.29Q72.69 13 43.66 13Q43.66 13 31.67 22.29Q18.49 32.5 12.35 51.13Z"/></svg></div>
+                        <div class="spec-lab">F · Kite<i>reads as an arch</i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="plate-cap"><b>Plate 2</b> D, E and F are honest attempts at the wind that
+                fail the same test — none of them says <i>M</i>, and none survives a circular avatar
+                crop. B and C are the same geometry in two containers, which is the answer.</div>
+        </div>
+    </section>
+
+    <section>
+        <div class="secmark"><b>05</b> The mark</div>
+        <div class="prose">
+            <h2>Drawn to a specification, not by eye</h2>
+            <p>A monoline M, splayed wide and raked 7° to starboard, with every terminal cut flat.
+                It reads as the letter, as a wave, and as a tacking course. The two counters are
+                sails.</p>
+        </div>
+
+        <div class="plate">
+            <div class="plate-body" style="display:flex;justify-content:center;padding:56px 32px">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.37 98.49" aria-hidden="true" style="height:150px;width:auto;"><path d="M21.17 89.29L0 89.29L43.86 0L53.55 0L70.67 52.09L100.59 0L110.43 0L132.37 89.29L112.8 89.29L100.35 38.58L65.93 98.49L46.17 38.39Z"/></svg>
+            </div>
+            <div class="plate-cap"><b>Plate 3</b> The mark at full size. Every terminal — the two
+                feet and both apexes — is a horizontal cut. That single rule is what stops it reading
+                as a generic lightning zigzag.</div>
+        </div>
+
+        <div class="tablewrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Why</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Stroke, perpendicular</td>
+                        <td class="spec-val">19 units</td>
+                        <td class="what">Matched to Archivo 700's stem, then over-weighted — diagonals
+                            read lighter than verticals</td>
+                    </tr>
+                    <tr>
+                        <td>Splay, horizontal step</td>
+                        <td class="spec-val">28 units</td>
+                        <td class="what">Wide enough to read as a wave; narrower and it becomes a
+                            spike</td>
+                    </tr>
+                    <tr>
+                        <td>Centreline height</td>
+                        <td class="spec-val">76 units</td>
+                        <td class="what">Sets the 20° stroke angle — the system's <i>Meltemi angle</i></td>
+                    </tr>
+                    <tr>
+                        <td>Middle vertex</td>
+                        <td class="spec-val">−14 units</td>
+                        <td class="what">Lifted above the feet so the M doesn't split into two
+                            chevrons at small sizes</td>
+                    </tr>
+                    <tr>
+                        <td>Apex</td>
+                        <td class="spec-val">mitred, cut 12</td>
+                        <td class="what">A razor point disappears below 16 px; a flat apex survives</td>
+                    </tr>
+                    <tr>
+                        <td>Feet</td>
+                        <td class="spec-val">flat, on baseline</td>
+                        <td class="what">The mark sits on a line, so it never looks sheared</td>
+                    </tr>
+                    <tr>
+                        <td>Lean</td>
+                        <td class="spec-val">7°</td>
+                        <td class="what">Enough to read as motion at 15 px, not enough to read as
+                            italic</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="note">
+            <p><b>Why generated rather than drawn.</b> Every curve here comes from a parametric
+                script, so the mark can be rebuilt exactly, at any weight, forever. The build files
+                ship in <code>brand/src/</code>. Peters' formal integrity is easier to keep when the
+                geometry is a specification rather than a memory.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="secmark"><b>06</b> The wordmark</div>
+        <div class="prose">
+            <h2>Lowercase, and one custom letter</h2>
+            <p><strong>Archivo</strong>, weight 700, tracked −26/1000&nbsp;em, all lowercase. Archivo
+                is a sturdy grotesque drawn from 19th-century American models — it has backbone
+                without being fashionable, which is what permanence-first asks for.</p>
+            <p>Keeping it lowercase is not a startup affectation. It is <em>kleinschreibung</em>, the
+                Bauhaus convention — which is also the modernism of Tel Aviv's White City, and the
+                restraint of Danish design. For this founder it is the historically correct register,
+                and it was already his instinct.</p>
+            <p>Then one letter is customized: the final <strong>c</strong>. Its aperture is re-cut as
+                a wedge at ±18°, opening both terminals on an angle that rhymes with the mark's apex.
+                The <em>c</em> is the letter that turned <em>Meltemi</em> into a company, so it is
+                the letter that carries the craft.</p>
+        </div>
+
+        <div class="plate">
+            <div class="plate-body">
+                <div class="specimens" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr));max-width:420px;margin:0 auto">
+                    <div class="spec">
+                        <div class="spec-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="24.35 -552.65 522.87 578.65" aria-hidden="true" style="height:96px;width:auto;"><path d="M294.65 12Q349.17 12 437.18 -15.57Q437.18 -15.57 499.96 -69.57Q499.96 -69.57 533.22 -149.52Q533.22 -149.52 533.22 -200.91L400.65 -200.91Q400.65 -166.57 376.65 -118.52Q376.65 -118.52 331.65 -94.83Q331.65 -94.83 297.87 -94.83Q255.61 -94.83 203.57 -129.65Q203.57 -129.65 179.44 -200Q179.44 -200 179.44 -251.43L179.44 -274Q179.44 -326.22 203.35 -396Q203.35 -396 253.39 -431.61Q253.39 -431.61 293.09 -431.61Q327.22 -431.61 372 -407.91Q372 -407.91 394.22 -361.65Q394.22 -361.65 394.22 -325.96L533.22 -325.96Q533.22 -379.7 499.96 -459.43Q499.96 -459.43 436.39 -512.65Q436.39 -512.65 349.17 -538.65Q349.17 -538.65 294.65 -538.65Q211.7 -538.65 97.48 -479.22Q97.48 -479.22 38.35 -357.78Q38.35 -357.78 38.35 -263.22Q38.35 -169.65 96.7 -47.43Q96.7 -47.43 210.91 12Q210.91 12 294.65 12Z"/></svg></div>
+                        <div class="spec-lab">Archivo 700<i>as drawn</i></div>
+                    </div>
+                    <div class="spec pick">
+                        <div class="spec-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="24.35 -552.65 522.87 578.65" aria-hidden="true" style="height:96px;width:auto;"><path d="M294.65 12Q349.17 12 437.18 -15.57Q437.18 -15.57 499.96 -69.57Q499.96 -69.57 516.59 -109.54Q529.1 -139.63 532.2 -176.18L456.08 -200.91L400.65 -200.91Q400.65 -166.57 376.65 -118.52Q376.65 -118.52 331.65 -94.83Q331.65 -94.83 297.87 -94.83Q255.61 -94.83 203.57 -129.65Q203.57 -129.65 179.44 -200Q179.44 -200 179.44 -251.43L179.44 -274Q179.44 -326.22 203.35 -396Q203.35 -396 253.39 -431.61Q253.39 -431.61 293.09 -431.61Q327.22 -431.61 372 -407.91Q372 -407.91 394.22 -361.65Q394.22 -361.65 394.22 -325.96L458.76 -325.96L532.35 -349.87Q529.41 -388.84 516.59 -419.57Q499.96 -459.43 436.39 -512.65Q436.39 -512.65 349.17 -538.65Q349.17 -538.65 294.65 -538.65Q211.7 -538.65 97.48 -479.22Q97.48 -479.22 38.35 -357.78Q38.35 -357.78 38.35 -263.22Q38.35 -169.65 96.7 -47.43Q96.7 -47.43 210.91 12Q210.91 12 294.65 12Z"/></svg></div>
+                        <div class="spec-lab">Meltemic <i>c</i><i>aperture re-cut ±18°</i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="plate-cap"><b>Plate 4</b> Subtle at signature size, legible at display size.
+                That is the correct behaviour for a custom letterform — it rewards attention rather
+                than demanding it.</div>
+        </div>
+
+        <div class="plate">
+            <div class="plate-body">
+                <div class="scaletest">
+                    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5549.83 836.22" aria-hidden="true" style="height:56px;width:auto;"><path d="M177.15 747.22L0 747.22L367.04 0L448.1 0L591.44 435.9L841.82 0L924.17 0L1107.71 747.22L943.98 747.22L839.74 322.84L551.75 824.22L386.37 321.28ZM1437.4 824.22L1437.4 297.79L1552.66 297.79L1563.31 369.74L1570.31 369.74Q1587.75 344.44 1634.36 306.57Q1634.36 306.57 1693.53 285.79Q1693.53 285.79 1727.75 285.79Q1777.01 285.79 1850.75 325.74Q1850.75 325.74 1870.53 369.74L1877.53 369.74Q1894.97 344.44 1942.92 306.57Q1942.92 306.57 2004.23 285.79Q2004.23 285.79 2039.01 285.79Q2089.05 285.79 2162.79 322.61Q2162.79 322.61 2204.14 402.79Q2204.14 402.79 2204.14 467.35L2204.14 824.22L2065.4 824.22L2065.4 492.13Q2065.4 467.31 2054.27 432.48Q2054.27 432.48 2034.36 411.7Q2034.36 411.7 2004.88 401.48Q2004.88 401.48 1987.53 401.48Q1959.62 401.48 1915.79 431.52Q1915.79 431.52 1890.53 483.39Q1890.53 483.39 1890.53 517.35L1890.53 824.22L1751.79 824.22L1751.79 492.13Q1751.79 467.31 1740.66 432.48Q1740.66 432.48 1720.75 411.7Q1720.75 411.7 1691.27 401.48Q1691.27 401.48 1673.92 401.48Q1646.01 401.48 1601.62 431.52Q1601.62 431.52 1576.14 483.39Q1576.14 483.39 1576.14 517.35L1576.14 824.22ZM3975.4 824.22L3975.4 297.79L4090.66 297.79L4101.31 369.74L4108.31 369.74Q4125.75 344.44 4172.36 306.57Q4172.36 306.57 4231.53 285.79Q4231.53 285.79 4265.75 285.79Q4315.01 285.79 4388.75 325.74Q4388.75 325.74 4408.53 369.74L4415.53 369.74Q4432.97 344.44 4456.94 325.5Q4480.92 306.57 4542.23 285.79Q4542.23 285.79 4577.01 285.79Q4627.05 285.79 4700.79 322.61Q4700.79 322.61 4742.14 402.79Q4742.14 402.79 4742.14 467.35L4742.14 824.22L4603.4 824.22L4603.4 492.13Q4603.4 467.31 4597.84 449.89Q4592.27 432.48 4572.36 411.7Q4572.36 411.7 4542.88 401.48Q4542.88 401.48 4525.53 401.48Q4497.62 401.48 4453.79 431.52Q4453.79 431.52 4428.53 483.39Q4428.53 483.39 4428.53 517.35L4428.53 824.22L4289.79 824.22L4289.79 492.13Q4289.79 467.31 4284.23 449.89Q4278.66 432.48 4268.7 422.09Q4258.75 411.7 4229.27 401.48Q4229.27 401.48 4211.92 401.48Q4184.01 401.48 4139.62 431.52Q4139.62 431.52 4114.14 483.39Q4114.14 483.39 4114.14 517.35L4114.14 824.22ZM2541.23 836.22Q2454.83 836.22 2336.96 777.22Q2336.96 777.22 2276.83 655.22Q2276.83 655.22 2276.83 561Q2276.83 466.44 2336.75 345.22Q2336.75 345.22 2453.31 285.79Q2453.31 285.79 2538.62 285.79Q2618.75 285.79 2728.27 343.22Q2728.27 343.22 2784.18 462.09Q2784.18 462.09 2784.18 556.31L2784.18 591.87L2417.92 591.87Q2419.49 638.05 2444.4 701.78Q2444.4 701.78 2497.66 733.48Q2497.66 733.48 2541.14 733.48Q2565.01 733.48 2604.36 721.48Q2604.36 721.48 2632.83 697.35Q2632.83 697.35 2648.31 661.52Q2648.31 661.52 2648.31 638.48L2784.18 638.48Q2784.18 687.83 2748.97 762.26Q2748.97 762.26 2684.01 811.35Q2684.01 811.35 2595.01 836.22Q2595.01 836.22 2541.23 836.22ZM3656.23 836.22Q3569.83 836.22 3451.96 777.22Q3451.96 777.22 3391.83 655.22Q3391.83 655.22 3391.83 561Q3391.83 466.44 3451.75 345.22Q3451.75 345.22 3568.31 285.79Q3568.31 285.79 3653.62 285.79Q3733.75 285.79 3843.27 343.22Q3843.27 343.22 3899.18 462.09Q3899.18 462.09 3899.18 556.31L3899.18 591.87L3532.92 591.87Q3534.49 638.05 3559.4 701.78Q3559.4 701.78 3612.66 733.48Q3612.66 733.48 3656.14 733.48Q3680.01 733.48 3719.36 721.48Q3719.36 721.48 3747.83 697.35Q3747.83 697.35 3763.31 661.52Q3763.31 661.52 3763.31 638.48L3899.18 638.48Q3899.18 687.83 3863.97 762.26Q3863.97 762.26 3799.01 811.35Q3799.01 811.35 3710.01 836.22Q3710.01 836.22 3656.23 836.22ZM5312.14 836.22Q5228.4 836.22 5114.18 776.79Q5114.18 776.79 5085.01 715.68Q5055.83 654.57 5055.83 561Q5055.83 466.44 5114.96 345Q5114.96 345 5229.18 285.57Q5229.18 285.57 5312.14 285.57Q5366.66 285.57 5453.88 311.57Q5453.88 311.57 5517.44 364.79Q5517.44 364.79 5534.08 404.65Q5546.89 435.38 5549.83 474.35L5476.25 498.26L5411.7 498.26Q5411.7 462.57 5389.49 416.31Q5389.49 416.31 5344.7 392.61Q5344.7 392.61 5310.57 392.61Q5270.88 392.61 5220.84 428.22Q5220.84 428.22 5196.92 498Q5196.92 498 5196.92 550.22L5196.92 572.79Q5196.92 624.22 5221.05 694.57Q5221.05 694.57 5273.1 729.39Q5273.1 729.39 5315.36 729.39Q5349.14 729.39 5394.14 705.7Q5394.14 705.7 5418.14 657.65Q5418.14 657.65 5418.14 623.31L5473.57 623.31L5549.69 648.04Q5546.59 684.59 5534.08 714.68Q5517.44 754.65 5454.66 808.65Q5454.66 808.65 5410.66 822.44Q5366.66 836.22 5312.14 836.22ZM3258.88 836.22Q3208.79 836.22 3146.92 800.26Q3146.92 800.26 3118.92 739.05Q3118.92 739.05 3118.92 702.26L3118.92 405.39L3053.53 405.39L3053.53 297.79L3123.01 297.79L3149.57 147.96L3257.66 147.96L3257.66 297.79L3353.23 297.79L3353.23 405.39L3257.66 405.39L3257.66 679.18Q3257.66 703 3279.66 728.61Q3279.66 728.61 3304.27 728.61L3353.23 728.61L3353.23 819.79Q3341.92 824 3309.01 831.44Q3309.01 831.44 3273.75 836.22Q3273.75 836.22 3258.88 836.22ZM2860.4 824.22L2860.4 100.79L2999.14 100.79L2999.14 824.22ZM4840.4 824.22L4840.4 297.79L4979.14 297.79L4979.14 824.22ZM3534.71 504.13L3756.1 504.13Q3756.1 473.74 3741.75 430.57Q3741.75 430.57 3715.62 402.09Q3715.62 402.09 3678.7 389.31Q3678.7 389.31 3655.36 389.31Q3617.66 389.31 3566.62 414.44Q3566.62 414.44 3539.49 465.18Q3539.49 465.18 3534.71 504.13ZM2419.71 504.13L2641.1 504.13Q2641.1 473.74 2626.75 430.57Q2626.75 430.57 2600.62 402.09Q2600.62 402.09 2563.7 389.31Q2563.7 389.31 2540.36 389.31Q2502.66 389.31 2451.62 414.44Q2451.62 414.44 2424.49 465.18Q2424.49 465.18 2419.71 504.13ZM4840.4 220.92L4840.4 100.79L4979.14 100.79L4979.14 220.92Z"/></svg><span class="spec-lab">56 px</span></div>
+                    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5549.83 836.22" aria-hidden="true" style="height:26px;width:auto;"><path d="M177.15 747.22L0 747.22L367.04 0L448.1 0L591.44 435.9L841.82 0L924.17 0L1107.71 747.22L943.98 747.22L839.74 322.84L551.75 824.22L386.37 321.28ZM1437.4 824.22L1437.4 297.79L1552.66 297.79L1563.31 369.74L1570.31 369.74Q1587.75 344.44 1634.36 306.57Q1634.36 306.57 1693.53 285.79Q1693.53 285.79 1727.75 285.79Q1777.01 285.79 1850.75 325.74Q1850.75 325.74 1870.53 369.74L1877.53 369.74Q1894.97 344.44 1942.92 306.57Q1942.92 306.57 2004.23 285.79Q2004.23 285.79 2039.01 285.79Q2089.05 285.79 2162.79 322.61Q2162.79 322.61 2204.14 402.79Q2204.14 402.79 2204.14 467.35L2204.14 824.22L2065.4 824.22L2065.4 492.13Q2065.4 467.31 2054.27 432.48Q2054.27 432.48 2034.36 411.7Q2034.36 411.7 2004.88 401.48Q2004.88 401.48 1987.53 401.48Q1959.62 401.48 1915.79 431.52Q1915.79 431.52 1890.53 483.39Q1890.53 483.39 1890.53 517.35L1890.53 824.22L1751.79 824.22L1751.79 492.13Q1751.79 467.31 1740.66 432.48Q1740.66 432.48 1720.75 411.7Q1720.75 411.7 1691.27 401.48Q1691.27 401.48 1673.92 401.48Q1646.01 401.48 1601.62 431.52Q1601.62 431.52 1576.14 483.39Q1576.14 483.39 1576.14 517.35L1576.14 824.22ZM3975.4 824.22L3975.4 297.79L4090.66 297.79L4101.31 369.74L4108.31 369.74Q4125.75 344.44 4172.36 306.57Q4172.36 306.57 4231.53 285.79Q4231.53 285.79 4265.75 285.79Q4315.01 285.79 4388.75 325.74Q4388.75 325.74 4408.53 369.74L4415.53 369.74Q4432.97 344.44 4456.94 325.5Q4480.92 306.57 4542.23 285.79Q4542.23 285.79 4577.01 285.79Q4627.05 285.79 4700.79 322.61Q4700.79 322.61 4742.14 402.79Q4742.14 402.79 4742.14 467.35L4742.14 824.22L4603.4 824.22L4603.4 492.13Q4603.4 467.31 4597.84 449.89Q4592.27 432.48 4572.36 411.7Q4572.36 411.7 4542.88 401.48Q4542.88 401.48 4525.53 401.48Q4497.62 401.48 4453.79 431.52Q4453.79 431.52 4428.53 483.39Q4428.53 483.39 4428.53 517.35L4428.53 824.22L4289.79 824.22L4289.79 492.13Q4289.79 467.31 4284.23 449.89Q4278.66 432.48 4268.7 422.09Q4258.75 411.7 4229.27 401.48Q4229.27 401.48 4211.92 401.48Q4184.01 401.48 4139.62 431.52Q4139.62 431.52 4114.14 483.39Q4114.14 483.39 4114.14 517.35L4114.14 824.22ZM2541.23 836.22Q2454.83 836.22 2336.96 777.22Q2336.96 777.22 2276.83 655.22Q2276.83 655.22 2276.83 561Q2276.83 466.44 2336.75 345.22Q2336.75 345.22 2453.31 285.79Q2453.31 285.79 2538.62 285.79Q2618.75 285.79 2728.27 343.22Q2728.27 343.22 2784.18 462.09Q2784.18 462.09 2784.18 556.31L2784.18 591.87L2417.92 591.87Q2419.49 638.05 2444.4 701.78Q2444.4 701.78 2497.66 733.48Q2497.66 733.48 2541.14 733.48Q2565.01 733.48 2604.36 721.48Q2604.36 721.48 2632.83 697.35Q2632.83 697.35 2648.31 661.52Q2648.31 661.52 2648.31 638.48L2784.18 638.48Q2784.18 687.83 2748.97 762.26Q2748.97 762.26 2684.01 811.35Q2684.01 811.35 2595.01 836.22Q2595.01 836.22 2541.23 836.22ZM3656.23 836.22Q3569.83 836.22 3451.96 777.22Q3451.96 777.22 3391.83 655.22Q3391.83 655.22 3391.83 561Q3391.83 466.44 3451.75 345.22Q3451.75 345.22 3568.31 285.79Q3568.31 285.79 3653.62 285.79Q3733.75 285.79 3843.27 343.22Q3843.27 343.22 3899.18 462.09Q3899.18 462.09 3899.18 556.31L3899.18 591.87L3532.92 591.87Q3534.49 638.05 3559.4 701.78Q3559.4 701.78 3612.66 733.48Q3612.66 733.48 3656.14 733.48Q3680.01 733.48 3719.36 721.48Q3719.36 721.48 3747.83 697.35Q3747.83 697.35 3763.31 661.52Q3763.31 661.52 3763.31 638.48L3899.18 638.48Q3899.18 687.83 3863.97 762.26Q3863.97 762.26 3799.01 811.35Q3799.01 811.35 3710.01 836.22Q3710.01 836.22 3656.23 836.22ZM5312.14 836.22Q5228.4 836.22 5114.18 776.79Q5114.18 776.79 5085.01 715.68Q5055.83 654.57 5055.83 561Q5055.83 466.44 5114.96 345Q5114.96 345 5229.18 285.57Q5229.18 285.57 5312.14 285.57Q5366.66 285.57 5453.88 311.57Q5453.88 311.57 5517.44 364.79Q5517.44 364.79 5534.08 404.65Q5546.89 435.38 5549.83 474.35L5476.25 498.26L5411.7 498.26Q5411.7 462.57 5389.49 416.31Q5389.49 416.31 5344.7 392.61Q5344.7 392.61 5310.57 392.61Q5270.88 392.61 5220.84 428.22Q5220.84 428.22 5196.92 498Q5196.92 498 5196.92 550.22L5196.92 572.79Q5196.92 624.22 5221.05 694.57Q5221.05 694.57 5273.1 729.39Q5273.1 729.39 5315.36 729.39Q5349.14 729.39 5394.14 705.7Q5394.14 705.7 5418.14 657.65Q5418.14 657.65 5418.14 623.31L5473.57 623.31L5549.69 648.04Q5546.59 684.59 5534.08 714.68Q5517.44 754.65 5454.66 808.65Q5454.66 808.65 5410.66 822.44Q5366.66 836.22 5312.14 836.22ZM3258.88 836.22Q3208.79 836.22 3146.92 800.26Q3146.92 800.26 3118.92 739.05Q3118.92 739.05 3118.92 702.26L3118.92 405.39L3053.53 405.39L3053.53 297.79L3123.01 297.79L3149.57 147.96L3257.66 147.96L3257.66 297.79L3353.23 297.79L3353.23 405.39L3257.66 405.39L3257.66 679.18Q3257.66 703 3279.66 728.61Q3279.66 728.61 3304.27 728.61L3353.23 728.61L3353.23 819.79Q3341.92 824 3309.01 831.44Q3309.01 831.44 3273.75 836.22Q3273.75 836.22 3258.88 836.22ZM2860.4 824.22L2860.4 100.79L2999.14 100.79L2999.14 824.22ZM4840.4 824.22L4840.4 297.79L4979.14 297.79L4979.14 824.22ZM3534.71 504.13L3756.1 504.13Q3756.1 473.74 3741.75 430.57Q3741.75 430.57 3715.62 402.09Q3715.62 402.09 3678.7 389.31Q3678.7 389.31 3655.36 389.31Q3617.66 389.31 3566.62 414.44Q3566.62 414.44 3539.49 465.18Q3539.49 465.18 3534.71 504.13ZM2419.71 504.13L2641.1 504.13Q2641.1 473.74 2626.75 430.57Q2626.75 430.57 2600.62 402.09Q2600.62 402.09 2563.7 389.31Q2563.7 389.31 2540.36 389.31Q2502.66 389.31 2451.62 414.44Q2451.62 414.44 2424.49 465.18Q2424.49 465.18 2419.71 504.13ZM4840.4 220.92L4840.4 100.79L4979.14 100.79L4979.14 220.92Z"/></svg><span class="spec-lab">26 px — nav</span></div>
+                    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5549.83 836.22" aria-hidden="true" style="height:15px;width:auto;"><path d="M177.15 747.22L0 747.22L367.04 0L448.1 0L591.44 435.9L841.82 0L924.17 0L1107.71 747.22L943.98 747.22L839.74 322.84L551.75 824.22L386.37 321.28ZM1437.4 824.22L1437.4 297.79L1552.66 297.79L1563.31 369.74L1570.31 369.74Q1587.75 344.44 1634.36 306.57Q1634.36 306.57 1693.53 285.79Q1693.53 285.79 1727.75 285.79Q1777.01 285.79 1850.75 325.74Q1850.75 325.74 1870.53 369.74L1877.53 369.74Q1894.97 344.44 1942.92 306.57Q1942.92 306.57 2004.23 285.79Q2004.23 285.79 2039.01 285.79Q2089.05 285.79 2162.79 322.61Q2162.79 322.61 2204.14 402.79Q2204.14 402.79 2204.14 467.35L2204.14 824.22L2065.4 824.22L2065.4 492.13Q2065.4 467.31 2054.27 432.48Q2054.27 432.48 2034.36 411.7Q2034.36 411.7 2004.88 401.48Q2004.88 401.48 1987.53 401.48Q1959.62 401.48 1915.79 431.52Q1915.79 431.52 1890.53 483.39Q1890.53 483.39 1890.53 517.35L1890.53 824.22L1751.79 824.22L1751.79 492.13Q1751.79 467.31 1740.66 432.48Q1740.66 432.48 1720.75 411.7Q1720.75 411.7 1691.27 401.48Q1691.27 401.48 1673.92 401.48Q1646.01 401.48 1601.62 431.52Q1601.62 431.52 1576.14 483.39Q1576.14 483.39 1576.14 517.35L1576.14 824.22ZM3975.4 824.22L3975.4 297.79L4090.66 297.79L4101.31 369.74L4108.31 369.74Q4125.75 344.44 4172.36 306.57Q4172.36 306.57 4231.53 285.79Q4231.53 285.79 4265.75 285.79Q4315.01 285.79 4388.75 325.74Q4388.75 325.74 4408.53 369.74L4415.53 369.74Q4432.97 344.44 4456.94 325.5Q4480.92 306.57 4542.23 285.79Q4542.23 285.79 4577.01 285.79Q4627.05 285.79 4700.79 322.61Q4700.79 322.61 4742.14 402.79Q4742.14 402.79 4742.14 467.35L4742.14 824.22L4603.4 824.22L4603.4 492.13Q4603.4 467.31 4597.84 449.89Q4592.27 432.48 4572.36 411.7Q4572.36 411.7 4542.88 401.48Q4542.88 401.48 4525.53 401.48Q4497.62 401.48 4453.79 431.52Q4453.79 431.52 4428.53 483.39Q4428.53 483.39 4428.53 517.35L4428.53 824.22L4289.79 824.22L4289.79 492.13Q4289.79 467.31 4284.23 449.89Q4278.66 432.48 4268.7 422.09Q4258.75 411.7 4229.27 401.48Q4229.27 401.48 4211.92 401.48Q4184.01 401.48 4139.62 431.52Q4139.62 431.52 4114.14 483.39Q4114.14 483.39 4114.14 517.35L4114.14 824.22ZM2541.23 836.22Q2454.83 836.22 2336.96 777.22Q2336.96 777.22 2276.83 655.22Q2276.83 655.22 2276.83 561Q2276.83 466.44 2336.75 345.22Q2336.75 345.22 2453.31 285.79Q2453.31 285.79 2538.62 285.79Q2618.75 285.79 2728.27 343.22Q2728.27 343.22 2784.18 462.09Q2784.18 462.09 2784.18 556.31L2784.18 591.87L2417.92 591.87Q2419.49 638.05 2444.4 701.78Q2444.4 701.78 2497.66 733.48Q2497.66 733.48 2541.14 733.48Q2565.01 733.48 2604.36 721.48Q2604.36 721.48 2632.83 697.35Q2632.83 697.35 2648.31 661.52Q2648.31 661.52 2648.31 638.48L2784.18 638.48Q2784.18 687.83 2748.97 762.26Q2748.97 762.26 2684.01 811.35Q2684.01 811.35 2595.01 836.22Q2595.01 836.22 2541.23 836.22ZM3656.23 836.22Q3569.83 836.22 3451.96 777.22Q3451.96 777.22 3391.83 655.22Q3391.83 655.22 3391.83 561Q3391.83 466.44 3451.75 345.22Q3451.75 345.22 3568.31 285.79Q3568.31 285.79 3653.62 285.79Q3733.75 285.79 3843.27 343.22Q3843.27 343.22 3899.18 462.09Q3899.18 462.09 3899.18 556.31L3899.18 591.87L3532.92 591.87Q3534.49 638.05 3559.4 701.78Q3559.4 701.78 3612.66 733.48Q3612.66 733.48 3656.14 733.48Q3680.01 733.48 3719.36 721.48Q3719.36 721.48 3747.83 697.35Q3747.83 697.35 3763.31 661.52Q3763.31 661.52 3763.31 638.48L3899.18 638.48Q3899.18 687.83 3863.97 762.26Q3863.97 762.26 3799.01 811.35Q3799.01 811.35 3710.01 836.22Q3710.01 836.22 3656.23 836.22ZM5312.14 836.22Q5228.4 836.22 5114.18 776.79Q5114.18 776.79 5085.01 715.68Q5055.83 654.57 5055.83 561Q5055.83 466.44 5114.96 345Q5114.96 345 5229.18 285.57Q5229.18 285.57 5312.14 285.57Q5366.66 285.57 5453.88 311.57Q5453.88 311.57 5517.44 364.79Q5517.44 364.79 5534.08 404.65Q5546.89 435.38 5549.83 474.35L5476.25 498.26L5411.7 498.26Q5411.7 462.57 5389.49 416.31Q5389.49 416.31 5344.7 392.61Q5344.7 392.61 5310.57 392.61Q5270.88 392.61 5220.84 428.22Q5220.84 428.22 5196.92 498Q5196.92 498 5196.92 550.22L5196.92 572.79Q5196.92 624.22 5221.05 694.57Q5221.05 694.57 5273.1 729.39Q5273.1 729.39 5315.36 729.39Q5349.14 729.39 5394.14 705.7Q5394.14 705.7 5418.14 657.65Q5418.14 657.65 5418.14 623.31L5473.57 623.31L5549.69 648.04Q5546.59 684.59 5534.08 714.68Q5517.44 754.65 5454.66 808.65Q5454.66 808.65 5410.66 822.44Q5366.66 836.22 5312.14 836.22ZM3258.88 836.22Q3208.79 836.22 3146.92 800.26Q3146.92 800.26 3118.92 739.05Q3118.92 739.05 3118.92 702.26L3118.92 405.39L3053.53 405.39L3053.53 297.79L3123.01 297.79L3149.57 147.96L3257.66 147.96L3257.66 297.79L3353.23 297.79L3353.23 405.39L3257.66 405.39L3257.66 679.18Q3257.66 703 3279.66 728.61Q3279.66 728.61 3304.27 728.61L3353.23 728.61L3353.23 819.79Q3341.92 824 3309.01 831.44Q3309.01 831.44 3273.75 836.22Q3273.75 836.22 3258.88 836.22ZM2860.4 824.22L2860.4 100.79L2999.14 100.79L2999.14 824.22ZM4840.4 824.22L4840.4 297.79L4979.14 297.79L4979.14 824.22ZM3534.71 504.13L3756.1 504.13Q3756.1 473.74 3741.75 430.57Q3741.75 430.57 3715.62 402.09Q3715.62 402.09 3678.7 389.31Q3678.7 389.31 3655.36 389.31Q3617.66 389.31 3566.62 414.44Q3566.62 414.44 3539.49 465.18Q3539.49 465.18 3534.71 504.13ZM2419.71 504.13L2641.1 504.13Q2641.1 473.74 2626.75 430.57Q2626.75 430.57 2600.62 402.09Q2600.62 402.09 2563.7 389.31Q2563.7 389.31 2540.36 389.31Q2502.66 389.31 2451.62 414.44Q2451.62 414.44 2424.49 465.18Q2424.49 465.18 2419.71 504.13ZM4840.4 220.92L4840.4 100.79L4979.14 100.79L4979.14 220.92Z"/></svg><span class="spec-lab">15 px — floor</span></div>
+                </div>
+            </div>
+            <div class="plate-cap"><b>Plate 5</b> The pressure test. Mark height is 1.14× the
+                wordmark ascender and the gap is 0.40× that height — both optical corrections, not
+                round numbers. Minimum lockup height is 18 px; below that, use the icon.</div>
+        </div>
+    </section>
+
+    <section>
+        <div class="secmark"><b>07</b> Colour</div>
+        <div class="prose">
+            <h2>Limestone, ink and one clay accent</h2>
+            <p>Tailwind blue is gone. The palette comes from the same place as the name: warm
+                limestone paper, deep Aegean ink, and a single Cycladic terracotta reserved for
+                calls to action. Every pairing was measured rather than eyeballed.</p>
+        </div>
+
+        <div class="plate">
+            <div class="swatches">
+                <div class="sw">
+                    <div class="sw-chip" style="background:#0B2733"></div>
+                    <div class="sw-meta"><b>Ink</b><span>#0B2733</span><em>13.8:1 AAA</em></div>
+                </div>
+                <div class="sw">
+                    <div class="sw-chip" style="background:#14607A"></div>
+                    <div class="sw-meta"><b>Sea</b><span>#14607A</span><em>6.2:1 AA</em></div>
+                </div>
+                <div class="sw">
+                    <div class="sw-chip" style="background:#8FBFCE"></div>
+                    <div class="sw-meta"><b>Gust</b><span>#8FBFCE</span><em>7.8:1 AAA on ink</em></div>
+                </div>
+                <div class="sw">
+                    <div class="sw-chip" style="background:#C24A26"></div>
+                    <div class="sw-meta"><b>Clay</b><span>#C24A26</span><em>4.9:1 AA reversed</em></div>
+                </div>
+                <div class="sw">
+                    <div class="sw-chip" style="background:#F4F1EA;border-bottom:1px solid var(--rule)"></div>
+                    <div class="sw-meta"><b>Limestone</b><span>#F4F1EA</span><em>ground</em></div>
+                </div>
+                <div class="sw">
+                    <div class="sw-chip" style="background:#54707C"></div>
+                    <div class="sw-meta"><b>Slate</b><span>#54707C</span><em>4.7:1 AA</em></div>
+                </div>
+            </div>
+            <div class="plate-cap"><b>Plate 6</b> Contrast ratios computed against limestone, except
+                Gust and Clay which are measured reversed. Clay is rationed to primary buttons and
+                the tack rule — three clay elements on one screen and it has stopped being an accent.</div>
+        </div>
+    </section>
+
+    <section>
+        <div class="secmark"><b>08</b> The system</div>
+        <div class="prose">
+            <h2>What the mark grows into</h2>
+            <p>Peters treats a logo as a seed and asks what it becomes. Three things grow directly
+                out of this geometry.</p>
+        </div>
+
+        <div class="plate">
+            <div class="plate-body">
+                <div class="typerow">
+                    <div class="role">Display<br>Archivo 600 / 700</div>
+                    <div class="t-archivo">Set a course that uses the wind</div>
+                </div>
+                <div class="typerow">
+                    <div class="role">Text<br>Inter 400 / 500 / 600</div>
+                    <div class="t-inter">The Meltemi arrives every year, from the same quarter, with
+                        the same force. Sailors don't fight it.</div>
+                </div>
+                <div class="typerow">
+                    <div class="role">Data &amp; labels<br>IBM Plex Mono 400 / 500</div>
+                    <div class="t-plex" style="color:var(--muted)">Strategic operations · Intelligent code</div>
+                </div>
+            </div>
+            <div class="plate-cap"><b>Plate 7</b> The mono register is where “intelligent code” now
+                lives — in eyebrows, badges and data labels. Same signal the angle bracket was
+                reaching for, but systemic rather than decorative, and it costs the logo nothing.</div>
+        </div>
+
+        <div class="plate">
+            <div class="plate-body">
+                <div style="display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:center">
+                    <div style="width:88px;height:88px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" style="width:100%;height:100%;display:block;"><path fill-rule="evenodd" d="M112.64 0L399.36 0C461.57 0 512 50.43 512 112.64L512 399.36C512 461.57 461.57 512 399.36 512L112.64 512C50.43 512 0 461.57 0 399.36L0 112.64C0 50.43 50.43 0 112.64 0ZM146.3 353.58L207.23 229.55L255.39 376L339.25 230.01L369.6 353.58L417.28 353.58L363.83 136L339.85 136L266.94 262.93L225.21 136L201.6 136L94.72 353.58Z"/></svg></div>
+                    <div style="width:48px;height:48px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" style="width:100%;height:100%;display:block;"><path fill-rule="evenodd" d="M112.64 0L399.36 0C461.57 0 512 50.43 512 112.64L512 399.36C512 461.57 461.57 512 399.36 512L112.64 512C50.43 512 0 461.57 0 399.36L0 112.64C0 50.43 50.43 0 112.64 0ZM146.3 353.58L207.23 229.55L255.39 376L339.25 230.01L369.6 353.58L417.28 353.58L363.83 136L339.85 136L266.94 262.93L225.21 136L201.6 136L94.72 353.58Z"/></svg></div>
+                    <div style="width:32px;height:32px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" style="width:100%;height:100%;display:block;"><path fill-rule="evenodd" d="M112.64 0L399.36 0C461.57 0 512 50.43 512 112.64L512 399.36C512 461.57 461.57 512 399.36 512L112.64 512C50.43 512 0 461.57 0 399.36L0 112.64C0 50.43 50.43 0 112.64 0ZM146.3 353.58L207.23 229.55L255.39 376L339.25 230.01L369.6 353.58L417.28 353.58L363.83 136L339.85 136L266.94 262.93L225.21 136L201.6 136L94.72 353.58Z"/></svg></div>
+                    <div style="width:16px;height:16px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" style="width:100%;height:100%;display:block;"><path fill-rule="evenodd" d="M112.64 0L399.36 0C461.57 0 512 50.43 512 112.64L512 399.36C512 461.57 461.57 512 399.36 512L112.64 512C50.43 512 0 461.57 0 399.36L0 112.64C0 50.43 50.43 0 112.64 0ZM146.3 353.58L207.23 229.55L255.39 376L339.25 230.01L369.6 353.58L417.28 353.58L363.83 136L339.85 136L266.94 262.93L225.21 136L201.6 136L94.72 353.58Z"/></svg></div>
+                    <div style="width:88px;height:88px;border-radius:50%;overflow:hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" style="width:100%;height:100%;display:block;"><path fill-rule="evenodd" d="M112.64 0L399.36 0C461.57 0 512 50.43 512 112.64L512 399.36C512 461.57 461.57 512 399.36 512L112.64 512C50.43 512 0 461.57 0 399.36L0 112.64C0 50.43 50.43 0 112.64 0ZM146.3 353.58L207.23 229.55L255.39 376L339.25 230.01L369.6 353.58L417.28 353.58L363.83 136L339.85 136L266.94 262.93L225.21 136L201.6 136L94.72 353.58Z"/></svg></div>
+                    <div style="color:#C24A26;height:34px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 294.42 46.25" aria-hidden="true" style="height:34px;width:auto;"><path d="M19.55 45.81L0 45.81L51.44 0L71.23 0L103.18 29.37L142.34 0L163.23 0L195.18 29.37L234.34 0L254.23 0L294.42 45.81L277.13 45.81L244.5 8.62L194.33 46.25L153 8.25L102.33 46.25L61.35 8.58Z"/></svg></div>
+                </div>
+            </div>
+            <div class="plate-cap"><b>Plate 8</b> The mark knocked out of a rounded square becomes
+                the favicon, app tile and avatar — including under a circular crop, which is what
+                LinkedIn will do to it. At right, the tacking rule: the same zigzag repeated, used as
+                a section device.</div>
+        </div>
+
+        <div class="prose">
+            <p>Shipped into the repository: SVG lockups (horizontal, stacked, mark, wordmark) in
+                <code>currentColor</code> so one file serves every colorway; the icon set from
+                16&nbsp;px to 512&nbsp;px including <code>apple-touch-icon.png</code> and a
+                multi-resolution <code>favicon.ico</code>; the tacking rule; a written specification;
+                and the parametric build scripts that generated all of it.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="secmark"><b>09</b> Next</div>
+        <div class="prose">
+            <h2>Three things I'd do next</h2>
+            <ul class="plain">
+                <li><strong>Put the founder story on the site properly.</strong> A Dane who
+                    learned the sea in Scandinavian water and now runs a strategy firm from Tel Aviv,
+                    named for the Mediterranean wind he moved into, is far more memorable than
+                    “veteran executive with a deep background”. The About page is currently the
+                    weakest, most generic thing on the site and it is sitting on the best material.</li>
+                <li><strong>Take the identity to LinkedIn.</strong> The mark exists now specifically
+                    so that <code>linkedin.com/in/peter-bondrop</code> and the Meltemic company page
+                    can carry it. Right now the brand stops at the website.</li>
+                <li><strong>Decide on the clay.</strong> Warm limestone with a terracotta accent is a
+                    genuinely common look right now. It's the right answer here because it comes from
+                    Cycladic architecture rather than from a mood board — but if it starts to feel
+                    familiar, the alternative is an ink-dominant site with limestone as the accent
+                    and clay used only on buttons. The tokens are already structured for that swap.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="secmark"><b>10</b> Sources</div>
+        <div class="prose">
+            <ul class="plain sources">
+                <li>Allan Peters, <a href="https://www.quarto.com/books/9780760383179/logos-that-last"><em>Logos
+                            that Last: How to Create Iconic Visual Branding</em></a>, Rockport, 2023</li>
+                <li><a href="https://weandthecolor.com/logos-that-last-how-allan-peters-turns-visual-branding-into-enduring-identity/209357">WE
+                        AND THE COLOR — on the permanence-first principle and the three levels</a></li>
+                <li><a href="https://logogeek.uk/podcast/badge-logos-allan-peters">Logo Geek podcast —
+                        Peters on badge logos, the brand-noun list and the 72×72 test</a></li>
+                <li><a href="https://www.petersdesigncompany.com/book">Peters Design Company</a></li>
+                <li><a href="https://www.rhodesguide.com/magazine/article/meltemi-meltemia/">Rhodes
+                        Guide — the Meltemi and the Etesian winds</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <span>Meltemic OÜ · brand review</span>
+        <span>Reviewed through Allan Peters, <i>Logos That Last</i></span>
+    </footer>
+</div>
+</body>
+
+</html>

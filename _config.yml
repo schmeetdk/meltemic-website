@@ -1,0 +1,11 @@
+# GitHub Pages build configuration.
+#
+# This repo is published to meltemic.com by Pages' default Jekyll build.
+# Everything here is version-controlled on purpose, but the paths below are
+# internal and are excluded from the published site.
+#
+# NOTE: if a .nojekyll file is ever added to this repo, Jekyll stops running
+# and these exclusions stop applying — everything would then be served.
+exclude:
+  - _review/     # brand review — internal, not for publication
+  - brand/src/   # parametric build scripts and the Archivo source font

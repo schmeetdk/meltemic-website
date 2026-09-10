@@ -1,32 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll reveal animation
     const reveals = document.querySelectorAll('.reveal');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const revealOnScroll = () => {
-        for (let i = 0; i < reveals.length; i++) {
-            const windowHeight = window.innerHeight;
-            const elementTop = reveals[i].getBoundingClientRect().top;
-            const elementVisible = 150;
+    if (reduced || !('IntersectionObserver' in window)) {
+        reveals.forEach(el => el.classList.add('active'));
+        return;
+    }
 
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add('active');
-            }
-        }
-    };
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Initial check
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                io.unobserve(entry.target);
             }
         });
-    });
+    }, { rootMargin: '0px 0px -12% 0px' });
+
+    reveals.forEach(el => io.observe(el));
 });
