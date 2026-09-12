@@ -9,3 +9,7 @@
 exclude:
   - _review/     # brand review — internal, not for publication
   - brand/src/   # parametric build scripts and the Archivo source font
+  - index-live.html   # local comparison copies — vLive / v2 side by side
+  - style-live.css    # (delete once a version is chosen)
+  - index-v2.html
+  - style-v2.css

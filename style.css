@@ -41,6 +41,9 @@
 
 html {
     scroll-behavior: smooth;
+    /* Clears the 78px sticky header, so an anchored section heading
+       is not hidden underneath it on arrival. */
+    scroll-padding-top: 78px;
 }
 
 body {

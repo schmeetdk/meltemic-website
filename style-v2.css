@@ -1,0 +1,77 @@
+/* ============================================================
+   Meltemic — v2 overlay
+   Loaded AFTER style.css. Contains only what v2 adds or changes,
+   so the diff between the two versions is this file plus the
+   copy in index-v2.html. Delete both to abandon v2.
+   ============================================================ */
+
+/* Four service cards instead of three: 2x2 leaves no orphan. */
+@media (min-width: 901px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- Sectors strip ----------
+   The domain axis. Set in the mono register because it is a list
+   of labels, not prose — same role as the stat captions. */
+.sectors {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+}
+
+.sectors-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--slate);
+    flex-shrink: 0;
+}
+
+.sectors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sectors-list li {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink);
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--salt);
+}
+
+/* ---------- Founder aside note ----------
+   The mentoring and investing line. Deliberately quieter than the
+   body copy — it is an aside, not a pitch. */
+.founder-aside-note {
+    font-size: 0.92rem;
+    color: var(--slate);
+    padding-left: 1rem;
+    border-left: 2px solid var(--gust);
+}
+
+/* v2 hero runs longer than v1; give the lede a little more room. */
+.hero .lede {
+    max-width: 46ch;
+}
+
+@media (max-width: 720px) {
+    .sectors {
+        margin-top: 2.25rem;
+        padding-top: 1.5rem;
+    }
+}
