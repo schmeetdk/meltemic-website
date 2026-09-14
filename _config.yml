@@ -9,8 +9,6 @@
 exclude:
   - _review/     # brand review — internal, not for publication
   - brand/src/   # parametric build scripts and the Archivo source font
-  - index-v2.html     # v2 draft for side-by-side review (delete once promoted)
-  - style-v2.css
 # NOTE: eng/ is deliberately NOT excluded. It is the archived copy of the
 # site as approved for Apple Developer Program enrolment, served unlinked
 # at /eng/ with noindex.
