@@ -865,6 +865,18 @@ footer {
     margin: 0;
 }
 
+/* Same hairline treatment as prose links. */
+.facts dd a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gust);
+    transition: border-color 0.2s var(--ease);
+}
+
+.facts dd a:hover {
+    border-bottom-color: var(--sea);
+}
+
 /* Three across when a page asks for it (homepage default is 2x2). */
 @media (min-width: 901px) {
     .grid--3 {
