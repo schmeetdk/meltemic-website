@@ -573,6 +573,20 @@ footer {
     color: var(--slate);
 }
 
+.hero-meta.hero-event {
+    margin-top: 0.75rem;
+}
+
+.hero-event a {
+    color: var(--clay);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.hero-event a:hover {
+    color: var(--clay-deep);
+}
+
 /* ---------- Founder identity ---------- */
 .founder-id {
     display: flex;
